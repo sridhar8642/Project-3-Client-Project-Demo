@@ -25,6 +25,7 @@ const feedbackSchema = new mongoose.Schema({
 const Feedback = mongoose.model("Feedback",feedbackSchema);
 app.use(bodyParser.urlencoded ({extended:true}));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 app.get("/",(req,res)=>{
     res.sendFile(__dirname + "/index.html");
